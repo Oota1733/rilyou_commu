@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # devise_for :users
    #寮生用
   devise_for :users, skip: [:passwords], controllers:{
-
+    registrations: 'public/registrations',
     sessions: 'public/sessions'
   }
 
@@ -42,9 +42,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/' => 'orders#index'
     resources :admin, only: [:index, :new, :create, :show, :edit, :update]
-    resources :admin, only: [:index, :new, :create, :show, :edit, :update]
-   
-
+    resources :user, only: [:index, :new, :create, :show, :edit, :update]
+    resources :notification_type, only: [:index, :edit, :create, :update, :destroy]
+    resources :notification, only: [:index, :new, :create, :show, :edit, :update]
   end
 
 # 退会確認画面
