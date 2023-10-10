@@ -15,30 +15,27 @@ class Public::CommunityController < ApplicationController
       @user = User.find(params[:id])
     end
   
-    def new
-      @community = Community.new
-    end
+    
   
-    def create
-      @community = Community.new(group_params)
-      @community.owner_id = current_user.id
-      if @community.save
-        redirect_to community_index_path, method: :post
-      else
-        render 'new'
-      end
-    end
+    # def create
+    #   @community = Community.new(community_params)
+    #   @community.owner_id = current_user.id
+    #   if @community.save
+    #     redirect_to community_index_path, method: :post
+    #   else
+    #     render 'new'
+    #   end
+    # end
   
-    def edit
-    end
+   
   
-    def update
-      if @community.update(community_params)
-        redirect_to communities_path
-      else
-        render "edit"
-      end
-    end
+    # def update
+    #   if @community.update(community_params)
+    #     redirect_to communities_path
+    #   else
+    #     render "edit"
+    #   end
+    # end
   
     private
   

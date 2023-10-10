@@ -23,16 +23,16 @@ Rails.application.routes.draw do
     patch "users/information" => "users#update"
     get "users/confirm" => "users#confirm"
     patch "users/withdrawal" => "users#withdrawal"
-   
+
 
     post "users/confirm" => "orders#confirm"
     get "users/complete" => "orders#complete"
     #delete "cart_items/destroy_all" => "cart_items#destroy_all"
-    resources :notification, only: [:index, :update, :destroy, :create]
+    resources :notification, only: [:new, :index, :update, :destroy, :create]
     resources :notification_types, only: [:index, :update, :show, :destroy]
     resources :entry_users, only: [:new, :index, :show, :create]
     resources :community, only: [:index, :edit, :create, :update, :destroy]
-    resources :posts, only: [:index, :edit, :create, :update, :destroy]
+    resources :posts, only: [:new, :index, :edit, :show, :create, :update, :destroy]
     resources :tags, only: [:index, :edit, :create, :update, :destroy]
     resources :comments, only: [:index, :edit, :create, :update, :destroy]
   end
