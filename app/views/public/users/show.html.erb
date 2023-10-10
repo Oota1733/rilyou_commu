@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <h4 class="my-5">マイページ</h4>
+      <%=link_to "グループを作成する",new_entry_user_path %> |
+      <%=link_to "グループ一覧",community_index_path %>
+        <div class="d-flex align-items-center">
+          <h3><b>登録情報</b></h3>
+          <%= link_to "編集する", users_information_edit_path, class:"btn btn-outline-danger ml-3 my-3" %>
+        </div>
+          <table class="table table-bordered">
+            <tr>
+              <td class="table-danger">名前</td>
+              <td><%= @user.last_name %></td>
+            </tr>
+
+            <tr>
+              <td class="bg-light">名前</td>
+              <td><%= @user.first_name %></td>
+            </tr>
+
+            <tr>
+              <td class="table-danger">フリガナ（セイ）</td>
+              <td><%= @user.last_name_kana %></td>
+            </tr>
+
+            <tr>
+              <td class="bg-light">フリガナ（メイ）</td>
+              <td><%= @user.first_name_kana %></td>
+            </tr>
+
+            <tr>
+              <td class="table-danger">郵便番号</td>
+              <td><%= @user.postal_code %></td>
+            </tr>
+
+            <tr>
+              <td class="bg-light">住所</td>
+              <td><%= @user.address %></td>
+            </tr>
+
+            <tr>
+              <td class="table-danger">電話番号</td>
+              <td><%= @user.phone_number %></td>
+            </tr>
+
+            <tr>
+              <td class="bg-light">メールアドレス</td>
+              <td><%= @user.email %></td>
+            </tr>
+          </table>
+    </div>
+  </div>
+</div>

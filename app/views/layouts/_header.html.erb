@@ -37,16 +37,16 @@
                 </li>
 
               <li>
+                <%= link_to notification_index_path, class: 'nav-link text-dark' do %>
+                  Notification
+                <% end %>
+              </li>
+
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do %>
                   Log out
                 <% end %>
               </li>
-
-              <!--<li>-->
-              <!--   link_to user_notification_path, method: :delete, class: 'nav-link text-dark' do %>-->
-              <!--    届け出-->
-              <!--   end %>-->
-              <!--</li>-->
 
             <% elsif admin_signed_in? %>
             <!--adminログイン時-->

@@ -23,18 +23,18 @@ Rails.application.routes.draw do
     patch "users/information" => "users#update"
     get "users/confirm" => "users#confirm"
     patch "users/withdrawal" => "users#withdrawal"
-
+   
 
     post "users/confirm" => "orders#confirm"
     get "users/complete" => "orders#complete"
     #delete "cart_items/destroy_all" => "cart_items#destroy_all"
     resources :notification, only: [:index, :update, :destroy, :create]
-    resources :notification_type, only: [:index, :show]
-    resources :entry_user, only: [:new, :index, :show, :create]
+    resources :notification_types, only: [:index, :update, :show, :destroy]
+    resources :entry_users, only: [:new, :index, :show, :create]
     resources :community, only: [:index, :edit, :create, :update, :destroy]
-    resources :post, only: [:show]
-    resources :tag, only: [:index, :edit, :create, :update, :destroy]
-    resources :comment, only: [:index, :edit, :create, :update, :destroy]
+    resources :posts, only: [:index, :edit, :create, :update, :destroy]
+    resources :tags, only: [:index, :edit, :create, :update, :destroy]
+    resources :comments, only: [:index, :edit, :create, :update, :destroy]
   end
 
 
@@ -48,9 +48,9 @@ Rails.application.routes.draw do
   end
 
 # 退会確認画面
-get  '/customers/check' => 'customers#check'
+get  '/user/check' => 'user#check'
 # 論理削除用のルーティング
-patch  '/customers/withdraw' => 'customers#withdraw'
+patch  '/user/withdraw' => 'users#withdraw'
 
 
  #For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

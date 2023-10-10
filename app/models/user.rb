@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :postal_code, presence: true
   validates :address, presence: true
   validates :phone_number, presence: true
-  validates :password, presence: true
-  validates :password_confirmation, presence: true
+
+  has_many :group_users, dependent: :destroy
 end
