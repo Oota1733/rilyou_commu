@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 2023_10_08_065732) do
   end
 
   create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.text "introduction"
+    t.string "image_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,19 +49,27 @@ ActiveRecord::Schema.define(version: 2023_10_08_065732) do
   end
 
   create_table "notifications", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "introduction", null: false
+    t.integer "user_id"
+    t.integer "notification_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.string "introduction", default: "", null: false
+    t.string "title", default: "", null: false
+    t.text "body", default: "", null: false
     t.integer "user_id"
+    t.integer "tag_id", null: false
+    t.integer "community_id", null: false
+    t.boolean "public_status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

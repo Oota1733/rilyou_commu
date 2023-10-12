@@ -31,10 +31,15 @@ Rails.application.routes.draw do
     resources :notification, only: [:new, :index, :update, :destroy, :create]
     resources :notification_types, only: [:index, :update, :show, :destroy]
     resources :entry_users, only: [:new, :index, :show, :create]
-    resources :community, only: [:index, :edit, :create, :update, :destroy]
-    resources :posts, only: [:new, :index, :edit, :show, :create, :update, :destroy]
-    resources :tags, only: [:index, :edit, :create, :update, :destroy]
-    resources :comments, only: [:index, :edit, :create, :update, :destroy]
+
+    resources :communities do
+      resources :posts, only: [:new, :index, :edit, :show, :create, :update, :destroy] do
+        resources :comments, only: [:index, :edit, :create, :update, :destroy]
+      end
+    end
+
+    # resources :tags, only: [:index, :edit, :create, :update, :destroy]
+
   end
 
 
