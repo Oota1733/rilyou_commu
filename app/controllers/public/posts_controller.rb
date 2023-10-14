@@ -17,14 +17,22 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.id
     @post.community_id = params[:community_id]
+    @post.user_id = current_user.id
+
 
     if @post.save
       redirect_to community_path(params[:community_id])
     else
+      logger.debug @post.errors.full_messages
       render 'new'
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(post_id: @post.id)
   end
 
   private

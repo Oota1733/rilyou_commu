@@ -31,6 +31,7 @@ class Public::CommunitiesController < ApplicationController
       if @community.save
         redirect_to communities_path
       else
+        logger.debug @community.errors.full_messages
         render 'new'
       end
     end

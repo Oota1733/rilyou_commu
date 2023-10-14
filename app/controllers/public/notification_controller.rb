@@ -6,7 +6,6 @@ class Public::NotificationController < ApplicationController
 
  def create
     @notification = Notification.new(notification_params)
-
     @notification.user_id = current_user.id
 
 
@@ -18,6 +17,11 @@ class Public::NotificationController < ApplicationController
       @notification = Notification.all
       render :new
     end
+
+    def index
+      @notifications = Notification.all
+    end
+
  end
 
  private

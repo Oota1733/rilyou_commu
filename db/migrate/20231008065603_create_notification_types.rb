@@ -1,6 +1,6 @@
 class CreateNotificationTypes < ActiveRecord::Migration[6.1]
   def change
-    create_table :notification_types do |t|
+     create_table :notification_types do |t|
     
 
 

@@ -1,0 +1,20 @@
+<div class="container">
+<%= @post.title %>
+<%= @post.body %>
+
+
+<%= form_with model: [@post, @comment], url: community_post_comments_path(@post.community, @post), local: false do |f| %>
+  <%= f.text_area :body, rows: '5', placeholder: "Any comments on this post?", class: "form-control mt-3" %>
+  <div class="text-right">
+    <%= f.submit "Submit", class: "btn btn-primary mt-3 mb-3" %>
+  </div>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+  <div class="col-3 text-center">
+    <div class="small mb-4"><%= comment.user.last_name%></div>
+    <div class="small mb-4"><%= comment.body %></div>
+  </div>
+  <%= link_to "Delete", community_post_comment_path(@post.community, @post, comment), method: :delete, remote: true, "data-confirm" => t('comments.create.delete_confirm'), class: "btn-sm btn-danger" %>
+<% end %>
+
