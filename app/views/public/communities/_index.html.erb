@@ -15,6 +15,7 @@
         <td><%= community.introduction %></td>
         <% if community.user == current_user %>
           <td><%= link_to 'Edit', edit_community_path(community), class: "community_#{community.id} btn btn-sm btn-success" %>
+          <td><%= link_to "削除", community_path(community), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
           </td>
         <% end %>
       </tr>

@@ -11,7 +11,7 @@
     <% @notifications.each do |notification| %>
       <tr>
 
-        <td><%= link_to notification.name,notification_path(notification) %></td>
+        <td><%= notification.name %></td>
         <td><%= notification.introduction %></td>
         <% if notification.user == current_user %>
           <td><%= link_to 'Edit', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-sm btn-success" %>

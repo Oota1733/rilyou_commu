@@ -46,6 +46,12 @@ class Public::CommunitiesController < ApplicationController
       end
     end
 
+    def destroy
+        @community = Community.find(params[:id])
+        @community.destroy
+        redirect_to communities_path
+    end
+
     private
 
     def community_params

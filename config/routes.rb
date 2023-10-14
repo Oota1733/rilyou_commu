@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     patch "users/information" => "users#update"
     get "users/confirm" => "users#confirm"
     patch "users/withdrawal" => "users#withdrawal"
-
+    
 
     post "users/confirm" => "orders#confirm"
     get "users/complete" => "orders#complete"
