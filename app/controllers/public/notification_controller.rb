@@ -10,7 +10,7 @@ class Public::NotificationController < ApplicationController
 
 
     if @notification.save
-      flash[:notice] = "You have created book successfully."
+      flash[:notice] = "You have created notification successfully."
       redirect_to notification_index_path
     else
       @user = current_user
@@ -18,11 +18,24 @@ class Public::NotificationController < ApplicationController
       render :new
     end
 
+
+ end
+
     def index
       @notifications = Notification.all
     end
 
- end
+    def edit
+      @notification = Notification.find(params[:id])
+    end
+
+    def update
+      @notification = Notification.find(params[:id])
+      @notification.update(notification_params)
+      redirect_to notification_index_path
+    end
+
+
 
  private
 

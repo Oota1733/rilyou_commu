@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     post "users/confirm" => "orders#confirm"
     get "users/complete" => "orders#complete"
     #delete "cart_items/destroy_all" => "cart_items#destroy_all"
-    resources :notification, only: [:new, :index, :update, :destroy, :create]
+    resources :notification, only: [:new, :index, :update, :destroy, :create, :edit]
     resources :notification_types, only: [:index, :update, :show, :destroy]
     resources :entry_users, only: [:new, :index, :show, :create]
     resources :post_comments, only: [:new, :index, :show, :create]

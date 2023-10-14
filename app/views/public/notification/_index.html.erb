@@ -11,10 +11,10 @@
     <% @notifications.each do |notification| %>
       <tr>
 
-        <td><%= link_to notification.name,community_path(notification) %></td>
-        <td><%= community.introduction %></td>
+        <td><%= link_to notification.name,notification_path(notification) %></td>
+        <td><%= notification.introduction %></td>
         <% if notification.user == current_user %>
-          <td><%= link_to 'Edit', notification_index_path(notification), class: "notification_#{notification.id} btn btn-sm btn-success" %>
+          <td><%= link_to 'Edit', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-sm btn-success" %>
           </td>
         <% end %>
       </tr>
