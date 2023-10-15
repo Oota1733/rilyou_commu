@@ -5,6 +5,7 @@ class Public::PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -24,6 +25,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to community_path(params[:community_id])
     else
+
       logger.debug @post.errors.full_messages
       render 'new'
     end
@@ -34,6 +36,14 @@ class Public::PostsController < ApplicationController
     @comment = Comment.new
     @comments = Comment.where(post_id: @post.id)
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to Community.find(params[:community_id])
+  end
+
+
 
   private
 

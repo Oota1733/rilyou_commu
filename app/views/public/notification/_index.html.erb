@@ -15,6 +15,7 @@
         <td><%= notification.introduction %></td>
         <% if notification.user == current_user %>
           <td><%= link_to 'Edit', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-sm btn-success" %>
+          <td><%= link_to "削除", notification_path(notification), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
           </td>
         <% end %>
       </tr>

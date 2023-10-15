@@ -35,6 +35,12 @@ class Public::NotificationController < ApplicationController
       redirect_to notification_index_path
     end
 
+     def destroy
+        @notification = Notification.find(params[:id])
+        @notification.destroy
+        redirect_to notification_index_path
+     end
+
 
 
  private

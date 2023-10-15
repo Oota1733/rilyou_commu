@@ -52,6 +52,7 @@
           <td><%= post.body %></td>
           <% if post.user == current_user %>
             <td><%= link_to 'Edit', edit_community_post_path(@community, post), class: "post_#{post.id} btn btn-sm btn-success" %>
+            <td><%= link_to "削除", community_post_path(@community, post), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
             </td>
           <% end %>
         </tr>

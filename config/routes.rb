@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:new, :index, :show, :create]
     resources :communities do
       resources :posts, only: [:new, :index, :edit, :show, :create, :update, :destroy] do
-        resources :comments, only: [:index, :edit, :create, :update, :destroy]
+        resources :comments, only: [:new, :index, :edit, :create, :update, :destroy]
       end
     end
 
