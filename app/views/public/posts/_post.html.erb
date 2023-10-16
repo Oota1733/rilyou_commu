@@ -1,0 +1,4 @@
+<%= link_to post.user.name, user_path(post.user.id) %>
+<i class="fa fa-heart unlike-btn"></i>
+<%= post.likes.length %>
+<%= favorites_to post.title, post_path(post.id) %>

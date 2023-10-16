@@ -14,13 +14,8 @@ class Public::CommunitiesController < ApplicationController
     end
 
     def show
-      # @community = Community.new
       @community = Community.find(params[:id])
-      # @communities = Community.all
-      # @posts = Post.all
-      #byebug
-      #@user = User.find(params[:id])
-      # @user = @community.user
+      @tags = Tag.where(id: @community.posts.map{|o|o.tag_id}&.uniq)
     end
 
 
@@ -50,6 +45,17 @@ class Public::CommunitiesController < ApplicationController
         @community = Community.find(params[:id])
         @community.destroy
         redirect_to communities_path
+    end
+
+    # def show
+    #     @tag = Tags.find(params[:id])
+    #     @tag = Tags.all
+    #     @paginate = @tags.items.page(params[:page]).per(12)
+    # end
+
+    def genre_search
+       @tag_id = params[:tag_id]
+       @posts = Post.where(tag_id: @tag_id)
     end
 
     private

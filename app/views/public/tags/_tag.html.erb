@@ -1,0 +1,14 @@
+<div class="col-8 mx-auto">
+<table class="table table-borderless">
+  <tr class="text-center">
+    <td class="table-danger">Tags</td>
+  </tr>
+  <% if tags&.any? %>
+    <% tags.each do |tag| %>
+      <tr class="text-center">
+        <td><%= link_to tag.name, tag_path(tag),class: "text-dark" %> </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+</div>
