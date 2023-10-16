@@ -6,6 +6,10 @@ class Post < ApplicationRecord
   has_many   :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  def favorited_by?(user)
+   favorites.exists?(user_id: user.id)
+  end
+
    def self.looks(search, word)
     if search == "perfect_match"
       Post.where("body = ?", word)

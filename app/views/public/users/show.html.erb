@@ -4,7 +4,8 @@
       <h4 class="my-5">マイページ</h4>
       <%=link_to "グループを作成する",new_community_path %> |
       <%=link_to "グループ一覧",communities_path %>
-      <%= link_to "いいねした投稿", favorites_community_user_path(@user) %>
+      <%#= link_to "いいねした投稿", favorites_community_user_path(@user) %>
+      <%= link_to "いいねした投稿", user_favorites_path(@user) %>
         <div class="d-flex align-items-center">
           <h3><b>登録情報</b></h3>
           <%= link_to "編集する", users_information_edit_path, class:"btn btn-outline-danger ml-3 my-3" %>

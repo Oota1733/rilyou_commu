@@ -10,7 +10,7 @@
   <tbody>
     <% @communities.each do |community| %>
       <tr>
-
+        
         <td><%= link_to community.name,community_path(community) %></td>
         <td><%= community.introduction %></td>
         <% if community.user == current_user %>

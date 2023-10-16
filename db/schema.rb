@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_072237) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "post_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

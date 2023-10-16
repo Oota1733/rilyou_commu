@@ -17,7 +17,7 @@
     <tbody>
       <% @community.posts.each do |post| %>
         <tr>
-
+          <td><%= render '/public/favorites/btn', post: post %></td>
           <td><%= link_to post.title, community_post_path(@community, post) %></td>
           <td><%= post.body %></td>
           <% if post.user == current_user %>

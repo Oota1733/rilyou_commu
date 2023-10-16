@@ -40,17 +40,12 @@ Rails.application.routes.draw do
         resources :favorites, only: [:create, :destroy]
         resources :comments, only: [:new, :index, :edit, :create, :update, :destroy]
       end
-           resources :users, only: [:show,:index,:edit,:update] do
-             member do
-               get :favorites
-      end
     end
-  end
-
+    resources :users, only: [:show,:index,:edit,:update] do
+      get :favorites
+    end
     # resources :tags, only: [:index, :edit, :create, :update, :destroy]
-
   end
-
 
   #管理者用
   namespace :admin do
@@ -61,10 +56,10 @@ Rails.application.routes.draw do
     resources :notification, only: [:index, :new, :create, :show, :edit, :update]
   end
 
-# 退会確認画面
-get  '/user/check' => 'user#check'
-# 論理削除用のルーティング
-patch  '/user/withdraw' => 'users#withdraw'
+  # 退会確認画面
+  get  '/user/check' => 'user#check'
+  # 論理削除用のルーティング
+  patch  '/user/withdraw' => 'users#withdraw'
 
 
  #For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
