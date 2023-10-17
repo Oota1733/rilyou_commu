@@ -9,12 +9,17 @@ class Public::PostsController < ApplicationController
   end
 
   def update
-    # if @post.update(post_params)
-    #   redirect_to posts_path
-    # else
-    #   render "edit"
-    # end
+    @post = Post.find(params[:id])
+     if @post.update(post_params)
+       redirect_to community_path(params[:community_id])
+     else
+       render "edit"
+     end
   end
+
+
+
+
 
   def create
     @post = Post.new(post_params)

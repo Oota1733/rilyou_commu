@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     get "users/complete" => "orders#complete"
     #delete "cart_items/destroy_all" => "cart_items#destroy_all"
     resources :searches, only: [:index]
-    resources :notification, only: [:new, :index, :update, :destroy, :create, :edit]
+    resources :notifications, only: [:new, :index, :update, :destroy, :create, :edit]
     resources :notification_types, only: [:index, :update, :show, :destroy]
     resources :entry_users, only: [:new, :index, :show, :create]
     resources :tags, only: [:new, :index, :update, :destroy, :create, :edit, :show]
@@ -44,20 +44,21 @@ Rails.application.routes.draw do
     resources :users, only: [:show,:index,:edit,:update] do
       get :favorites
     end
-    # resources :tags, only: [:index, :edit, :create, :update, :destroy]
+
   end
 
   #管理者用
   namespace :admin do
-    get '/' => 'orders#index'
-    resources :admin, only: [:index, :new, :create, :show, :edit, :update]
-    resources :user, only: [:index, :new, :create, :show, :edit, :update]
-    resources :notification_type, only: [:index, :edit, :create, :update, :destroy]
-    resources :notification, only: [:index, :new, :create, :show, :edit, :update]
+    get '/' => 'sessions#new'
+    resources :users, only: [:index, :new, :create, :show, :edit, :update]
+    resources :notification_types, only: [:index, :edit, :create, :update, :destroy]
+    resources :notifications, only: [:index, :new, :create, :show, :edit, :update]
+    resources :tags, only: [:index, :new, :create, :show, :edit, :update]
+    resources :posts, only: [:index, :new, :create, :show, :edit, :update]
   end
 
   # 退会確認画面
-  get  '/user/check' => 'user#check'
+  #get  '/user/check' => 'user#check'
   # 論理削除用のルーティング
   patch  '/user/withdraw' => 'users#withdraw'
 

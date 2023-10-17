@@ -4,19 +4,23 @@
   </div>
 
   <div class="menu col-6 justify-content-center">
-    <h4><%=@tags.name %>（全<%= @tags.posts.all.count %>件）</h4>
+    <% @tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
+    <h4>（全<%= @posts.count %>件）</h4>
     <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 mx-auto p-2">
-      <% @tags.post.each do |item| %>
+      <% @posts.each do |post| %>
       <div class="item card-list-container col m-0.5 pb-5" >
-        <%= link_to post_path(item.id) do %>
+        <%= link_to community_post_path(community_id: post.community.id, id: post.id) do %>
 
-          <h6 class="card-title text-dark", style="height:30px;"><%= post.name %></h6>
+          <h6 class="card-title text-dark", style="height:30px;"><%= post.title %></h6>
 
         <% end %>
       </div>
       <% end %>
+      
     </div>
-    <%= paginate @paginate %>
+    <%#= paginate @paginate %>
   </div>
 </main>
 
