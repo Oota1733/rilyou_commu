@@ -1,4 +1,4 @@
-class Public::NotificationController < ApplicationController
+class Public::NotificationsController < ApplicationController
 
  def new
     @notification = Notification.new
@@ -11,7 +11,7 @@ class Public::NotificationController < ApplicationController
 
     if @notification.save
       flash[:notice] = "You have created notification successfully."
-      redirect_to notification_index_path
+      redirect_to notifications_path
     else
       @user = current_user
       @notification = Notification.all
@@ -32,13 +32,13 @@ class Public::NotificationController < ApplicationController
     def update
       @notification = Notification.find(params[:id])
       @notification.update(notification_params)
-      redirect_to notification_index_path
+      redirect_to notifications_path
     end
 
      def destroy
         @notification = Notification.find(params[:id])
         @notification.destroy
-        redirect_to notification_index_path
+        redirect_to notifications_path
      end
 
 

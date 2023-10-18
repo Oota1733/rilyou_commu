@@ -17,15 +17,10 @@ class Public::PostsController < ApplicationController
      end
   end
 
-
-
-
-
   def create
     @post = Post.new(post_params)
     @post.community_id = params[:community_id]
     @post.user_id = current_user.id
-
 
     if @post.save
       redirect_to community_path(params[:community_id])
