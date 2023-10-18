@@ -11,6 +11,10 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :phone_number, presence: true
 
+  def full_name
+    last_name + first_name
+  end
+
   has_many :community_users, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy

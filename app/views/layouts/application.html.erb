@@ -17,11 +17,11 @@
 
     <ul>
     <% flash.each do |message_type, message| %>
-     <div class="flash-message <%= message_type %>"><%= message %></div>
+     <li class="flash-message <%= message_type %>"><%= message %></li>
     <% end %>
    </ul>
 
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
-
+</html>

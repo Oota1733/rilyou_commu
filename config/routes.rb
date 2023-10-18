@@ -49,7 +49,7 @@ Rails.application.routes.draw do
 
   #管理者用
   namespace :admin do
-    get '/' => 'sessions#new'
+    root to: 'notifications#index'
     resources :users, only: [:index, :new, :create, :show, :edit, :update]
     resources :notification_types, only: [:index, :edit, :create, :update, :destroy]
     resources :notifications, only: [:index, :new, :create, :show, :edit, :update]
