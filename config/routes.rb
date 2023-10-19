@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  # devise_for :admins
-  # devise_for :users
+
    #寮生用
   devise_for :users, skip: [:passwords], controllers:{
     registrations: 'public/registrations',
@@ -54,7 +53,9 @@ Rails.application.routes.draw do
     resources :notification_types, only: [:index, :edit, :create, :update, :destroy]
     resources :notifications, only: [:index, :new, :create, :show, :edit, :update]
     resources :tags, only: [:index, :create, :edit, :update]
-    resources :posts, only: [:index, :new, :create, :show, :edit, :update]
+    resources :posts, only: [:index, :new, :create, :show, :edit, :update] do
+       resources :comments, only: [:destroy]
+    end
   end
 
   # 退会確認画面

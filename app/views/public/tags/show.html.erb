@@ -4,9 +4,9 @@
   </div>
 
   <div class="menu col-6 justify-content-center">
-    <% @tags.each do |tag| %>
-      <%= tag.name %>
-    <% end %>
+
+      <%= @tag.name %>
+
     <h4>（全<%= @posts.count %>件）</h4>
     <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 mx-auto p-2">
       <% @posts.each do |post| %>
@@ -18,7 +18,7 @@
         <% end %>
       </div>
       <% end %>
-      
+
     </div>
     <%#= paginate @paginate %>
   </div>

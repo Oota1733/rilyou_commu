@@ -11,25 +11,22 @@
       <table class="table table-hover table-inverse">
         <tr>
           <th>氏名</th>
-          <th>メールアドレス</th>
+          <th>届け出名</th>
+          <th>届け出内容</th>
         </tr>
 
-        <% @users.each do |user| %>
+        <% @notifications.each do |notification| %>
           <tr>
-            <td><%= user.id %></td>
-            <td><%= link_to user.full_name, admin_user_path(user) %></td>
-            <td><%= user.email %></td>
+            <td><%= notification.id %></td>
+            <td><%= notification.name %></td>
+            <td><%= notification.introduction %></td>
             <td>
-              <% if user.is_active %>
-                <span class="text-success">有効</span>
-              <% else %>
-                <span class="text-secondary">退会</span>
-              <% end %>
+
             </td>
           </tr>
         <% end %>
       </table>
-      <%= paginate @users %>
+      <%#= paginate @users %>
     </div>
   </div>
 </div>

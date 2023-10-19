@@ -40,7 +40,7 @@ class Public::CommunitiesController < ApplicationController
         render "edit"
       end
     end
-
+#ここだけ残す
     def destroy
         @community = Community.find(params[:id])
         @community.destroy

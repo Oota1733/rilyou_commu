@@ -1,0 +1,11 @@
+<table class='table'>
+
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, admin_post_path(post) %></td>
+          <td><%= post.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
