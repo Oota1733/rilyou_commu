@@ -15,7 +15,7 @@ class Public::CommunitiesController < ApplicationController
 
     def show
       @community = Community.find(params[:id])
-      @tags = Tag.where(id: @community.posts.map{|o|o.tag_id}&.uniq)
+      @tags = Tag.all
     end
 
 
