@@ -40,18 +40,14 @@ class Public::CommunitiesController < ApplicationController
         render "edit"
       end
     end
-#ここだけ残す
+
     def destroy
         @community = Community.find(params[:id])
         @community.destroy
         redirect_to communities_path
     end
 
-    # def show
-    #     @tag = Tags.find(params[:id])
-    #     @tag = Tags.all
-    #     @paginate = @tags.items.page(params[:page]).per(12)
-    # end
+
 
     def genre_search
        @tag_id = params[:tag_id]

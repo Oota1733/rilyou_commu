@@ -2,6 +2,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   belongs_to :community
+  belongs_to :tag
 
   has_many   :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy

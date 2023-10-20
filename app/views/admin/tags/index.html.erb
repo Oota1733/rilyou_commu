@@ -4,9 +4,6 @@
 
       <h3>ジャンル一覧・追加</h3>
 
-      <!--バリデーション部分-->
-      <!--<%#= render 'layouts/error', obj: @tag %>-->
-
       <!--form部分-->
       <%=form_with model: @tag,url: admin_tags_path, method: :post do |f| %>
         <td><%= f.label :"ジャンル名", class: "mr-3" %></td>
