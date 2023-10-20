@@ -12,12 +12,12 @@
         <tr>
           <th>氏名</th>
           <th>届け出名</th>
-          <th>届け出内容</th>
+          <th>届け出</th>
         </tr>
 
         <% @notifications.each do |notification| %>
           <tr>
-            <td><%= notification.id %></td>
+            <td><%= notification.user.full_name %></td>
             <td><%= notification.name %></td>
             <td><%= notification.introduction %></td>
             <td>

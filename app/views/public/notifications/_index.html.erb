@@ -1,7 +1,6 @@
 <table class='table'>
   <thead>
     <tr>
-      <th></th>
       <th>届け出</th>
       <th>内容</th>
       <th colspan="3"></th>
@@ -10,11 +9,10 @@
   <tbody>
     <% @notifications.each do |notification| %>
       <tr>
-
         <td><%= notification.name %></td>
         <td><%= notification.introduction %></td>
         <% if notification.user == current_user %>
-          <td><%= link_to 'Edit', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-sm btn-success" %>
+          <td><%= link_to '編集', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-success" %>
           <td><%= link_to "削除", notification_path(notification), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
           </td>
         <% end %>
