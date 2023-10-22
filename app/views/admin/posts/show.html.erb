@@ -7,6 +7,6 @@
     <div class="small mb-4"><%= comment.user.last_name%></div>
     <div class="small mb-4"><%= comment.body %></div>
   </div>
-  <%= link_to "Delete", admin_post_comment_path(@post, comment), method: :delete, remote: true, "data-confirm" => t('comments.create.delete_confirm'), class: "btn-sm btn-danger" %>
+  <%= link_to "削除", admin_post_comment_path(@post, comment), method: :delete, remote: true, "data-confirm" => t('comments.create.delete_confirm'), class: "btn-sm btn-danger" %>
 <% end %>
 
