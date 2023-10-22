@@ -12,6 +12,8 @@
       <% @posts.each do |post| %>
         <tr>
           <td><%= post.body %></td>
+          <td>タイトル</td>
+          <td><%= post.title %></td>
         </tr>
       <% end %>
 

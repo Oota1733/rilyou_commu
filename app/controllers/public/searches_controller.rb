@@ -3,15 +3,12 @@ class Public::SearchesController < ApplicationController
 
   def search
 
-    #@range = params[:range]
     @word = params[:word]
-    #if @range == "Post"
+    @title = params[:title]
     @posts = Post.looks(params[:search], params[:word])
 
-    #else
     flash.now[:notice] = "見つかりませんでした。" unless @posts.any?
 
-    #end
     render :index
   end
 

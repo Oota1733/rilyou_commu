@@ -13,13 +13,13 @@ class Post < ApplicationRecord
 
    def self.looks(search, word)
     if search == "perfect_match"
-      Post.where("body = ?", word)
+      Post.where("title = ? OR body = ?", word, word)
     elsif search == "forward_match"
-      Post.where("body LIKE ?","#{word}%")
+      Post.where("title LIKE ? OR body LIKE ?", "#{word}%", "#{word}%")
     elsif search == "backward_match"
-      Post.where("body LIKE ?","%#{word}")
+      Post.where("title LIKE ? OR body LIKE ?", "%#{word}", "%#{word}")
     elsif search == "partial_match"
-      Post.where("body LIKE ?","%#{word}%")
+      Post.where("title LIKE ? OR body LIKE ?", "%#{word}%", "%#{word}%")
     else
       Post.all
     end

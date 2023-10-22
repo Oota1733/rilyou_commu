@@ -8,7 +8,7 @@
 #  AdminのEメールとパスワード
   Admin.find_or_create_by!(email: "1234@1234.com") do |a|
     a.password = "12345678"
-  e
+  end
   #ユーザーアカウント配列
 
   User.find_or_create_by!(email: "maria@example.com") do |u|
@@ -49,25 +49,30 @@
   tags = %w(現代文 数学 物理 地理)
   tags.each { |tag_name| Tag.find_or_create_by(name: tag_name) }
 
+  # ルームを作成または既存のものを検索
   # User.all.each do |user|
   #   Community.find_or_create_by!(user_id: user.id) do |p|
-  #   p.name = "ルーム１"
-  #   p.introduction = "こんにちは"
+  #     p.name = "ルーム１"
+  #     p.introduction = "こんにちは"
   #   end
   # end
 
 
-#    投稿を作成または既存のものを検索
-#     post = Post.find_or_create_by!(community_id: community.id) do |p|
-#       p.title = "こんんちは"
-#       p.body = "こんばんは"
-#       p.tag_list.add(tag_list) # タグを追加します。
-#       p.user_id = user.id
-#     end
+  # # 投稿を作成または既存のものを検索
+  #   User.all.each do |user|
+  #     post = Post.find_or_create_by!(user_id: user.id) do |p|
+  #       p.title = "こんんちは"
+  #       p.body = "こんばんは"
+  #       p.tag_list.add(tag_list) # タグを追加します。
+  #     end
+  #   end
 
-#     comment = Comment.find_or_create_by!(post_id: post.id) do |p|
-#       p.body = "今日"
-#       p.user_id = user.id
-#     end
+  # # コメントを作成または既存のものを検索
+  #   Post.all.each do |post|
+  #     comment = Comment.find_or_create_by!(post_id: post.id) do |p|
+  #       p.body = "今日"
+  #       p.user_id = user.id
+  #     end
+  #   end
 
 
