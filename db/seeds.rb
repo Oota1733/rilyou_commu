@@ -43,6 +43,28 @@
     u.postal_code = 1234567
     u.address = "東京１"
   end
+  
+  User.find_or_create_by!(email: "taguti@example.com") do |u|
+    u.password = "t1234567"
+    u.last_name = "田口"
+    u.first_name = "涼太"
+    u.last_name_kana = "たぐち"
+    u.first_name_kana = "りょうた"
+    u.phone_number = 1234567
+    u.postal_code = 1234567
+    u.address = "栃木１"
+  end
+  
+  User.find_or_create_by!(email: "mori@example.com") do |u|
+    u.password = "s1234567"
+    u.last_name = "森"
+    u.first_name = "宮子"
+    u.last_name_kana = "もり"
+    u.first_name_kana = "みやこ"
+    u.phone_number = 1234567
+    u.postal_code = 1234567
+    u.address = "群馬１"
+  end
 
 
   # タグの作成
