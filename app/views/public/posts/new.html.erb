@@ -1,23 +1,23 @@
 <div class="container">
   <h2>New Post</h2>
-  <%= form_with model: @post, url: community_posts_path(params[:community_id]) do |f| %>
-    <div class="form-group">
-      <%= f.label :title, "タイトル" %>
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :body, "本文" %>
-      <%= f.text_area :body, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :tag_id, "タグ" %>
-      <%= f.collection_select(:tag_id, Tag.all, :id, :name, {}, {class: "form-control"}) %>
-    </div>
-
-    <div class="form-group">
-      <%= f.submit class: "btn btn-info" %>
-    </div>
-  <% end %>
+    <%= form_with model: @post, url: community_posts_path(params[:community_id]) do |f| %>
+      <div class="form-group">
+        <%= f.label :title, "タイトル" %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+  
+      <div class="form-group">
+        <%= f.label :body, "本文" %>
+        <%= f.text_area :body, class: "form-control" %>
+      </div>
+  
+      <div class="form-group">
+        <%= f.label :tag_id, "タグ" %>
+        <%= f.collection_select(:tag_id, Tag.all, :id, :name, {}, {class: "form-control"}) %>
+      </div>
+  
+      <div class="form-group">
+        <%= f.submit class: "btn btn-info" %>
+      </div>
+    <% end %>
 </div>

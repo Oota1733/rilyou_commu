@@ -9,8 +9,8 @@
   Admin.find_or_create_by!(email: "1234@1234.com") do |a|
     a.password = "12345678"
   end
+  
   #ユーザーアカウント配列
-
   User.find_or_create_by!(email: "maria@example.com") do |u|
     u.password = "m1234567"
     u.last_name = "三木"

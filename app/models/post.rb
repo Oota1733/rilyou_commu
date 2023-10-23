@@ -11,7 +11,7 @@ class Post < ApplicationRecord
    favorites.exists?(user_id: user.id)
   end
 
-   def self.looks(search, word)
+  def self.looks(search, word)
     if search == "perfect_match"
       Post.where("title = ? OR body = ?", word, word)
     elsif search == "forward_match"
@@ -23,6 +23,6 @@ class Post < ApplicationRecord
     else
       Post.all
     end
-   end
+  end
 
 end
