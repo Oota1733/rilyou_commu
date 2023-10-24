@@ -9,7 +9,7 @@
   Admin.find_or_create_by!(email: "1234@1234.com") do |a|
     a.password = "12345678"
   end
-  
+
   #ユーザーアカウント配列
   User.find_or_create_by!(email: "maria@example.com") do |u|
     u.password = "m1234567"
@@ -43,7 +43,7 @@
     u.postal_code = 1234567
     u.address = "東京１"
   end
-  
+
   User.find_or_create_by!(email: "taguti@example.com") do |u|
     u.password = "t1234567"
     u.last_name = "田口"
@@ -54,7 +54,7 @@
     u.postal_code = 1234567
     u.address = "栃木１"
   end
-  
+
   User.find_or_create_by!(email: "mori@example.com") do |u|
     u.password = "s1234567"
     u.last_name = "森"
@@ -68,7 +68,7 @@
 
 
   # タグの作成
-  tags = %w(現代文 数学 物理 地理)
+  tags = %w(現代文 数学 物理 地理 その他)
   tags.each { |tag_name| Tag.find_or_create_by(name: tag_name) }
 
   # ルームを作成または既存のものを検索
