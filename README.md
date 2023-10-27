@@ -25,14 +25,17 @@
 ・外泊届
 ・寮食延長届等
 ## 設計書
-<!--テーマを設定・提出する時点では不要です-->
-​・後ほど作成予定
+・[実装機能リスト](https://docs.google.com/spreadsheets/d/1euyoQIkLG5ffVO0IAZhyIDGKdSRk-gBURgg8bcggJK0/edit#gid=885378170)
+・
+・
+・
+・
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：macOS Big Sur バージョン11.2.3
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
 ​
 ## 使用素材
-・後ほど作成予定
+・[使用ロゴ：powered by Shopify](https://www.shopify.com/jp/tools/logo-maker/my-logos)
