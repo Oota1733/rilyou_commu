@@ -31,7 +31,7 @@
 - [テスト仕様書](https://docs.google.com/spreadsheets/d/1NQEEb1fsbff6wsUN_YKj7jBklGlzVBXY/edit#gid=2072448154)
 ## 開発環境
 ## 開発環境
-- OS：macOS Big Sur バージョン11.2.3
+- OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
