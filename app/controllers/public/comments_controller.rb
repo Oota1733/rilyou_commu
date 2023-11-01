@@ -13,6 +13,7 @@ class Public::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
+    @comment.score = Language.get_data(comment_params[:body])
     @comment.save
     redirect_to community_post_path(@post.community, @post)
   end
