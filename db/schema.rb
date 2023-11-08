@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_01_130924) do
+ActiveRecord::Schema.define(version: 2023_11_01_151002) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_130924) do
     t.text "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "communities", force: :cascade do |t|
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(version: 2023_11_01_130924) do
   create_table "notifications", force: :cascade do |t|
     t.string "name", null: false
     t.string "introduction", null: false
-    t.integer "user_id"
-    t.integer "notification_type_id"
+    t.integer "user_id", null: false
+    t.integer "notification_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -72,7 +73,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_130924) do
   create_table "posts", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.text "body", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.integer "tag_id", null: false
     t.integer "community_id", null: false
     t.boolean "public_status", default: true
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_130924) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -92,10 +93,10 @@ ActiveRecord::Schema.define(version: 2023_11_01_130924) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.string "phone_number", null: false
     t.string "postal_code", null: false
     t.string "address", null: false
