@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_151002) do
     t.string "name", null: false
     t.string "introduction", null: false
     t.integer "user_id", null: false
-    t.integer "notification_type_id", null: false
+    t.integer "notification_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
