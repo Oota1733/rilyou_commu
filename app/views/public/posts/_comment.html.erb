@@ -1,0 +1,14 @@
+<% post.comments.each do |comment| %>
+  <div class="col-3 text-center">
+
+    <div class="small mb-4"><%= comment.user.last_name%></div>
+    <div class="small mb-4"><%= comment.body %></div>
+    <% if comment.score.present? && comment.score < 0.5 %> <%#この数値は後検討%>
+        <p class="translatable-text mt-2"><small class="text-secondary">※非常にネガティブなコメントです。トラブル回避のため、不要な場合は削除することを推奨します※</small></p>
+    <% end %>
+
+  </div>
+  <%= link_to "削除", community_post_comment_path(comment.post.community, comment.post, comment), data: { confirm: "コメントを本当に削除してもよろしいでしょうか？" }, method: :delete, remote: true,  class: "btn-sm btn-danger" %>
+<% end %>
+
+<!--"data-confirm" => t('comments.create.delete_confirm'),-->

@@ -20,6 +20,6 @@ module Rilyou
     # config.eager_load_paths << Rails.root.join("extras")
 
     # 日本時間に設定する表記を追加
-    config.time_zone = 'Asia/Tokyo'
+    config.time_zone = 'Tokyo'
   end
 end

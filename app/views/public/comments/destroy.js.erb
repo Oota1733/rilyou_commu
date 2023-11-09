@@ -1,2 +1,2 @@
-$('#comment_counter').html("<%= j(render 'public/posts/form', book: @comment.book) %>");
-$('#comment_index').html("<%= j(render 'public/posts/post', book: @comment.book) %>");
+$('#comment_<%= @post.id %>').html("<%= j(render 'public/posts/comment', post: @post) %>");
+
