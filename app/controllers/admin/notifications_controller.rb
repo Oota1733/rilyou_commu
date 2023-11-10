@@ -5,6 +5,7 @@ class Admin::NotificationsController < ApplicationController
   def index
     @notification = Notification.all
     @notifications = Notification.page(params[:page]).per(10)
+    @notifications = Notification.all.order(created_at: :desc)
   end
 
   def show

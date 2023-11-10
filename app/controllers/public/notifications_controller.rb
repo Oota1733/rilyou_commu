@@ -23,6 +23,7 @@ class Public::NotificationsController < ApplicationController
 
     def index
       @notifications = Notification.all
+      @notifications = Notification.all.order(created_at: :desc)
     end
 
     def edit

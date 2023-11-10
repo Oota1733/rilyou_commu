@@ -18,13 +18,10 @@
 
         <% @notifications.each do |notification| %>
           <tr>
-            <td><%= notification.created_at %></td>
+            <td><%= notification.created_at.strftime('%Y-%m-%d %H:%M') %></td>
             <td><%= notification.user.full_name %></td>
             <td><%= notification.name %></td>
             <td><%= notification.introduction %></td>
-            <td>
-
-            </td>
           </tr>
         <% end %>
       </table>
