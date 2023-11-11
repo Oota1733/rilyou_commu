@@ -1,0 +1,9 @@
+<h4>通知</h4>
+  <% if @notices.present? %>
+    <%= link_to "全削除",notice_path(@notices), method: :delete,class:"btn btn-light" %>
+    <% @notices.each do |notice| %>
+        <%= render "#{notice.action_type}", notice: notice %>
+    <% end %>
+  <% else %>
+    通知はありません
+  <% end %>

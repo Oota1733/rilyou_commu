@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :entry_users, only: [:new, :index, :show, :create]
     resources :tags, only: [:new, :index, :update, :destroy, :create, :edit, :show]
     resources :post_comments, only: [:new, :index, :show, :create]
+    resources :notices, only: [:index]
     resources :communities do
       resources :posts, only: [:new, :index, :edit, :show, :create, :update, :destroy] do
         resources :favorites, only: [:create, :destroy]
