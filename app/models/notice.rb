@@ -1,13 +1,7 @@
 class Notice < ApplicationRecord
-  
-  def change
-    create_table :notices do |t|
-      t.references :subject, polymorphic: true
-      t.references :user, foreign_key: true
-      t.integer :action_type, null: false
-      t.boolean :checked
-      
-      t.timestamps
-      end
-  end
+
+  belongs_to :subject, polymorphic: true
+  belongs_to :user
+
+  enum action_type: { commented_to_own_post: 0, favorite_to_own_post: 1 }
 end

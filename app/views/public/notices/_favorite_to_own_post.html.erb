@@ -1,9 +1,0 @@
-<%= link_to transition_path(notice) do %>
-  <div>
-    <%= link_to notice.subject.end_user.first_name, user_path(notice.subject.end_user) %>
-    があなたの
-    <%= link_to '投稿', post_workout_path(notice.subject.post_workout) %>
-    にいいねしました
-    <%= " (#{time_ago_in_words(notice.created_at)}前)" %>
-  </div>
-<% end %>

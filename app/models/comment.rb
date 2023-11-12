@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
 
   private
     def create_notices
-      Notices.create(subject: self, user: post.user, action_type: :commented_to_own_post)
+      Notice.create(subject: self, user: post.user, action_type: :commented_to_own_post)
     end
 
 end
