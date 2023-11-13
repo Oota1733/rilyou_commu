@@ -5,12 +5,14 @@
         <%= link_to root_path, class: 'brand-logo' do %>
           <%= image_tag 'logo.png', size:"100x100" %>
 
-            <li class="nav-item">
-              <%= link_to notices_path, class: "nav-link" do %>
-                <i class="fa-sharp fa-solid fa-bell"></i>
-                通知一覧
-              <% end %>
-            </li>
+            <% if user_signed_in? %>
+              <li class="list-unstyled">
+                <%= link_to notices_path, class: "nav-link" do %>
+                  <i class="fa-sharp fa-solid fa-bell"></i>
+                  通知一覧
+                <% end %>
+              </li>
+            <% end %>
         <% end %>
 
         <% if current_user && current_user.notices.where(checked: false).exists? %>
@@ -19,21 +21,9 @@
           <i class="fa-sharp fa-solid fa-bell"></i>
         <% end %>
 
-      <!--  <li class="nav-item">-->
-      <!--  <%#= link_to notices_path, class: "nav-link" do %>-->
-      <!--    <%# if current_user.notices.where(checked: false).exists? %>-->
-      <!--      <i class="fa-sharp fa-solid fa-bell fa-beat" style="color: #f2ee7d;"></i>-->
-      <!--    <%# else %>-->
-      <!--      <i class="fa-sharp fa-solid fa-bell"></i>-->
-      <!--    <%# end %>-->
-      <!--    通知一覧-->
-      <!--  <%# end %>-->
-      <!--</li>-->
-
         <!--customerログイン時、ようこそ○○さん！-->
         <% if user_signed_in? %>
-        <div class="log-in-message">ようこそ、<%= current_user.last_name %>さん！</div>
-
+          <div class="log-in-message">ようこそ、<%= current_user.last_name %>さん！</div>
         <% end %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
