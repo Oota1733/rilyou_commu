@@ -8,17 +8,16 @@
             <% if user_signed_in? %>
               <li class="list-unstyled">
                 <%= link_to notices_path, class: "nav-link" do %>
-                  <i class="fa-sharp fa-solid fa-bell"></i>
+                   <% if current_user && current_user.notices.where(checked: false).exists? %>
+                      <i class="fa-sharp fa-solid fa-bell fa-beat" style="color: #f2ee7d;"></i>
+                   <% else %>
+                      <i class="fa-sharp fa-solid fa-bell"></i>
+                   <% end %>
+                  <script src="https://kit.fontawesome.com/41c13e50fc.js" crossorigin="anonymous"></script>
                   通知一覧
                 <% end %>
               </li>
             <% end %>
-        <% end %>
-
-        <% if current_user && current_user.notices.where(checked: false).exists? %>
-          <i class="fa-sharp fa-solid fa-bell fa-beat" style="color: #f2ee7d;"></i>
-        <% else %>
-          <i class="fa-sharp fa-solid fa-bell"></i>
         <% end %>
 
         <!--customerログイン時、ようこそ○○さん！-->
@@ -37,25 +36,25 @@
             <!--寮生ログイン時-->
               <li>
                 <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
-                 My page
+                 マイページ
                 <% end %>
               </li>
 
               <li>
                 <%= link_to communities_path, class: 'nav-link text-dark' do %>
-                  Community
+                  コミュニティ
                 <% end %>
                 </li>
 
               <li>
                 <%= link_to new_notification_path, class: 'nav-link text-dark' do %>
-                  Notification
+                  届け出
                 <% end %>
               </li>
 
               <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do %>
-                  Log out
+                  ログアウト
                 <% end %>
               </li>
 
