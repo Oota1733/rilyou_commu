@@ -2,12 +2,14 @@
   <div>
     <%= link_to notice.subject.user.first_name, user_path(notice.subject.user) %>
     があなたの
-    <%= link_to '投稿', community_post_path(notice.subject.post.community_id, notice.subject.post.id) %>
-   <% if notice.commented_to_own_post? %>
-    にコメントしました
-   <% else %>
-    にいいねしました
-   <% end %>
+    
+    <% if notice.commented_to_own_post? %>
+      <%= link_to '投稿', community_post_path(notice.subject.post.community_id, notice.subject.post.id) %>
+      にコメントしました
+    <% else %>
+      <%= link_to '投稿', user_favorites_path(notice.subject.user) %>
+      にいいねしました
+    <% end %>
     <%= " (#{time_ago_in_words(notice.created_at)}前)" %>
   </div>
 <% end %>

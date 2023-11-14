@@ -26,7 +26,7 @@
 ・寮食延長届等
 ## 設計書
 - [実装機能リスト](https://docs.google.com/spreadsheets/d/1euyoQIkLG5ffVO0IAZhyIDGKdSRk-gBURgg8bcggJK0/edit#gid=885378170)
--  [テーブル提議書](https://docs.google.com/spreadsheets/d/1mWS77HYqPx8Nxj1tD8GIy-Kn3KZUO5hc/edit#gid=517772887)
+- [テーブル提議書](https://docs.google.com/spreadsheets/d/1mWS77HYqPx8Nxj1tD8GIy-Kn3KZUO5hc/edit#gid=517772887)
 - [ER図](https://app.diagrams.net/#G1PR02chUWPG_yZervahfeGFV2Dg467Dl8)
 - [テスト仕様書](https://docs.google.com/spreadsheets/d/1NQEEb1fsbff6wsUN_YKj7jBklGlzVBXY/edit#gid=2072448154)
 ## 開発環境
