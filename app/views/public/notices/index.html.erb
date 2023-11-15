@@ -4,7 +4,7 @@
 
       <h4>通知</h4>
         <% if @notices.present? %>
-          <%= link_to "全削除", notice_path, method: :delete, class: "btn btn-light" %>
+          <%= link_to "全削除", notice_path, method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-light" %>
           <% @notices.each do |notice| %>
               <%= render "own_post", notice: notice %>
           <% end %>

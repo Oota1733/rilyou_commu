@@ -4,11 +4,11 @@
 <%= @post.body %>
 
 <%= form_with model: [@post, @comment], url: community_post_comments_path(@post.community, @post), local: false do |f| %>
+  <div id="favorite_btn_<%= @post.id %>"><%= render '/public/favorites/btn', post: @post %></div>
   <%= f.text_area :body, rows: '5', placeholder: "Any comments on this post?", class: "form-control mt-3" %>
   <div class="text-right">
     <%= f.submit "コメント", class: "btn btn-primary mt-3 mb-3" %>
   </div>
-
 <% end %>
 
 

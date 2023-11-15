@@ -1,7 +1,7 @@
 <div class="row">
   <% post.comments.each do |comment| %>
     <div class="col-3 text-center">
-
+      
       <div class="small mb-4"><%= comment.user.last_name %></div>
       <div class="small mb-4"><%= comment.body %></div>
       <% if comment.score.present? && comment.score < 0.5 %> <%#この数値は後検討%>

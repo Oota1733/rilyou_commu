@@ -1,8 +1,8 @@
-<%= link_to community_post_path(notice.subject.post.community_id, notice.subject.post.id) do %>
+<%#= link_to community_post_path(notice.subject.post.community_id, notice.subject.post.id) do %>
   <div>
-    <%= link_to notice.subject.user.first_name, user_path(notice.subject.user) %>
+    <%=  notice.subject.user.first_name  %>
     があなたの
-    
+
     <% if notice.commented_to_own_post? %>
       <%= link_to '投稿', community_post_path(notice.subject.post.community_id, notice.subject.post.id) %>
       にコメントしました
@@ -10,6 +10,6 @@
       <%= link_to '投稿', user_favorites_path(notice.subject.user) %>
       にいいねしました
     <% end %>
-    <%= " (#{time_ago_in_words(notice.created_at)}前)" %>
+    <%= " (約#{time_ago_in_words(notice.created_at)}前)" %>
   </div>
-<% end %>
+<%# end %>
