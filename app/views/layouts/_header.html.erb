@@ -35,6 +35,12 @@
             <% if user_signed_in? %>
             <!--寮生ログイン時-->
               <li>
+                <%= link_to about_path, class: 'nav-link text-dark' do %>
+                  rilyou_commuについて
+                <% end %>
+              </li>
+
+              <li>
                 <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
                  マイページ
                 <% end %>
@@ -94,19 +100,19 @@
             <!--未ログイン時-->
               <li>
                 <%= link_to about_path, class: 'nav-link text-dark' do %>
-                  About
+                  rilyou_commuについて
                 <% end %>
               </li>
 
               <li>
                 <%= link_to new_user_registration_path, class: 'nav-link text-dark' do %>
-                  Sign up
+                  サインアップ
                 <% end %>
               </li>
 
               <li>
                 <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
-                  Log in
+                  ログイン
                 <% end %>
               </li>
             <% end %>

@@ -1,7 +1,7 @@
 <div class="container">
 
 <%= @post.title %>
-<%= @post.body %>
+<%= simple_format(@post.body) %>
 
 <%= form_with model: [@post, @comment], url: community_post_comments_path(@post.community, @post), local: false do |f| %>
   <div id="favorite_btn_<%= @post.id %>"><%= render '/public/favorites/btn', post: @post %></div>

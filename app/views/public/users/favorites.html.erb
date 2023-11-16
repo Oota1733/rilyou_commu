@@ -1,4 +1,5 @@
-<table class='table'>
+<div class="container">
+  <table class='table'>
     <thead>
       <tr>
         <th>いいね</th>
@@ -14,8 +15,14 @@
             <td><%= render '/public/favorites/btn', post: post %></td>
             <td><%= link_to post.title, community_post_path(community_id: post.community_id, id: post.id) %></td>
             <td><%= post.body %></td>
+            <td>
+              <% if post.user == current_user %>
+                <%= link_to "削除", community_post_path(community_id: post.community_id, id: post.id), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %>
+              <% end %>
+            </td>
           </tr>
         </tr>
       <% end %>
     </tbody>
-</table>
+  </table>
+</div>

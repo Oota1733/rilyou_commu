@@ -21,5 +21,6 @@ module Rilyou
 
     # 日本時間に設定する表記を追加
     config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
   end
 end

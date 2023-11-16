@@ -1,6 +1,6 @@
 <%#= link_to community_post_path(notice.subject.post.community_id, notice.subject.post.id) do %>
   <div>
-    <%=  notice.subject.user.first_name  %>
+    <%= notice.subject.user.first_name  %>
     があなたの
 
     <% if notice.commented_to_own_post? %>
@@ -10,6 +10,11 @@
       <%= link_to '投稿', user_favorites_path(notice.subject.user) %>
       にいいねしました
     <% end %>
-    <%= " (約#{time_ago_in_words(notice.created_at)}前)" %>
+    <small class="text-black-50">
+      <%= " (約#{time_ago_in_words(notice.created_at)}前)" %>
+    </small>
+    <small>
+      <%= link_to "既読", notice_path(notice), method: :delete, data: {confirm: "既読にしますか？"}, class: "text-danger" %>
+    </small>
   </div>
 <%# end %>

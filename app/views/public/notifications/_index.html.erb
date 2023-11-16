@@ -14,9 +14,11 @@
         <td><%= notification.name %></td>
         <td><%= notification.introduction %></td>
         <% if notification.user == current_user %>
-          <td><%= link_to '編集', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-success" %>
+          <td><%= link_to '編集', edit_notification_path(notification), class: "notification_#{notification.id} btn btn-success" %></td>
           <td><%= link_to "削除", notification_path(notification), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
-          </td>
+        <% else %>
+          <td></td>
+          <td></td>
         <% end %>
       </tr>
     <% end %>
