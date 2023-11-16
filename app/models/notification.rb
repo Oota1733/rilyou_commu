@@ -1,7 +1,7 @@
 class Notification < ApplicationRecord
   
    belongs_to :user
-   belongs_to :subject, polymorphic: true
+   #belongs_to :subject, polymorphic: true
    scope :latest, -> { order(created_at: :desc) }  #desc = 降順
   
   validates :name, presence: true

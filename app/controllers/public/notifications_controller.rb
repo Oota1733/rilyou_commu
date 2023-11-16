@@ -1,8 +1,8 @@
 class Public::NotificationsController < ApplicationController
 
- def new
+  def new
     @notification = Notification.new
- end
+  end
 
  def create
     @notification = Notification.new(notification_params)
@@ -47,6 +47,6 @@ class Public::NotificationsController < ApplicationController
  private
 
   def notification_params
-     params.require(:notification).permit(:name, :introduction,)
+    params.require(:notification).permit(:name, :introduction)
   end
 end
