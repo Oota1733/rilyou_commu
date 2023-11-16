@@ -15,8 +15,16 @@
     <tbody>
       <% @community.posts.each do |post| %>
         <tr>
-          <td id="favorite_btn_<%= post.id %>"><%= render '/public/favorites/btn', post: post %></td>
+          <% if post.user == current_user %>
+            <td>
+              <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+                <%= post.favorites.count %> いいね
+            </td>
+          <% else %>
+            <td id="favorite_btn_<%= post.id %>"><%= render '/public/favorites/btn', post: post %></td>
+          <% end %>
           <td><%= link_to post.title, community_post_path(@community, post) %></td>
+
           <td><%= post.body %></td>
           <td><%= post.tag.name %></td>
           <% if post.user == current_user %>
