@@ -1,6 +1,8 @@
 <div class="container">
 
+<div>タイトル:</div>
 <%= @post.title %>
+<div>内容:</div>
 <%= simple_format(@post.body) %>
   <% unless @post.user == current_user %>
     <%= form_with model: [@post, @comment], url: community_post_comments_path(@post.community, @post), local: false do |f| %>
