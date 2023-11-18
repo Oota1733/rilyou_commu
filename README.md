@@ -39,3 +39,4 @@
 ​
 ## 使用素材
 ・[使用ロゴ：powered by Shopify](https://www.shopify.com/jp/tools/logo-maker/my-logos)
+・[使用ロゴ：fontawesome](https://fontawesome.com/search?m=free&o=r)
