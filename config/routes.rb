@@ -54,7 +54,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :new, :create, :show, :edit, :update]
     resources :notification_types, only: [:index, :edit, :create, :update, :destroy]
     resources :notifications, only: [:index, :new, :create, :show, :edit, :update]
-    resources :tags, only: [:index, :create, :edit, :update]
+    resources :tags, only: [:index, :create, :edit, :update, :destroy]
     resources :posts, only: [:index, :new, :create, :show, :edit, :update] do
        resources :comments, only: [:destroy]
     end
