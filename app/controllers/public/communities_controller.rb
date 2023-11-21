@@ -15,7 +15,8 @@ class Public::CommunitiesController < ApplicationController
 
     def show
       @community = Community.find(params[:id])
-      @tags = Tag.all
+      # @tags = Tag.all
+      @tags = Post.all.map{|post| post.tag}.sort_by(&:id)
     end
 
 
