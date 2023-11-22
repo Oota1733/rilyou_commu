@@ -15,11 +15,8 @@ class Public::CommunitiesController < ApplicationController
 
     def show
       @community = Community.find(params[:id])
-      # @tags = Tag.all
-      @tags = Post.all.map{|post| post.tag}.sort_by(&:id)
+      @tags = Post.all.map{|post| post.tag}.sort_by(&:id).uniq
     end
-
-
 
     def create
       @community = Community.new(community_params)
@@ -31,8 +28,6 @@ class Public::CommunitiesController < ApplicationController
         render 'new'
       end
     end
-
-
 
     def update
       if @community.update(community_params)
@@ -47,8 +42,6 @@ class Public::CommunitiesController < ApplicationController
         @community.destroy
         redirect_to communities_path
     end
-
-
 
     def genre_search
        @tag_id = params[:tag_id]
