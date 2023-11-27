@@ -1,12 +1,25 @@
 <div class='container px-5 px-sm-0'>
   <h2>Posts search for "<%= @word %>"</h2>
   <ul>
+    <% if @word == "" %>
+    検索ワードを入力してください
+    <% else %>
     <% @posts.each do |post| %>
       <li>
-        <strong>タイトル: <%= post.title %></strong>
-        <br>
-        本文: <%= post.body %>
+        <!--<strong>タイトル: <%#= post.title %></strong>-->
+        <%= link_to community_post_path(community_id: post.community.id, id: post.id) do %>
+        <h6 class="card-title mb-3">タイトル:<%= post.title %></h6>
+        <!--<br>-->
+        <!--本文: <%#= post.body %>-->
+        <%# @posts.each do |post| %>
+      <div class="item card-list-container col-12 m-0.5 pb-5">
+        <%= link_to community_post_path(community_id: post.community.id, id: post.id) do %>
+          <h6 class="card-title mb-3">本文:<%= post.body %></h6>
+        <% end %>
+      </div>
+    <% end %>
       </li>
+    <% end %>
     <% end %>
   </ul>
 </div>

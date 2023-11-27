@@ -7,6 +7,9 @@ class Public::CommentsController < ApplicationController
     @comment.post_id = @post.id
     @comment.score = Language.get_data(comment_params[:body])
     @comment.save
+    unless @comment.save
+     render 'error'
+    end
   end
 
   def destroy

@@ -1,3 +1,7 @@
 $('#comment_<%= @post.id %>').html("<%= j(render 'public/posts/comment', post: @post) %>");
 
 $('textarea').val("");
+
+if ($("#comments-error").length) {
+  $("#comments-error").remove();
+}

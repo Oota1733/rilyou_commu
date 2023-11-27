@@ -1,8 +1,10 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
-  
+
   has_one :notice, as: :subject, dependent: :destroy
+
+  validates :body, presence: true
 
   after_create_commit :create_notices
 

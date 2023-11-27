@@ -10,6 +10,6 @@
         <p class="translatable-text mt-2"><small class="text-secondary">※非常にネガティブなコメントです。トラブル回避のため、不要な場合は削除することを推奨します※</small></p>
     <% end %>
   </div>
-  <%= link_to "削除", admin_post_comment_path(@post, comment), method: :delete, remote: true, "data-confirm" => t('comments.create.delete_confirm'), class: "btn-sm btn-danger" %>
+  <%= link_to "削除", admin_post_comment_path(@post, comment), method: :delete, remote: true, "data-confirm" => "削除しますか?", class: "btn-sm btn-danger" %>
 <% end %>
 
