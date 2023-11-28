@@ -1,4 +1,5 @@
 class Public::NoticesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @notices = current_user.notices.where(checked: false).order(created_at: :desc).page(params[:page]).per(20)

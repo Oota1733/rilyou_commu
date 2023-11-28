@@ -1,14 +1,13 @@
 class Public::NotificationsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @notification = Notification.new
   end
 
- def create
+  def create
     @notification = Notification.new(notification_params)
     @notification.user_id = current_user.id
-
-
     if @notification.save
       flash[:notice] = "You have created notification successfully."
       redirect_to notifications_path
@@ -17,30 +16,28 @@ class Public::NotificationsController < ApplicationController
       @notification = Notification.all
       render :new
     end
+  end
 
+  def index
+    @notifications = Notification.all
+    @notifications = Notification.all.order(created_at: :desc)
+  end
 
- end
+  def edit
+    @notification = Notification.find(params[:id])
+  end
 
-    def index
-      @notifications = Notification.all
-      @notifications = Notification.all.order(created_at: :desc)
-    end
+  def update
+    @notification = Notification.find(params[:id])
+    @notification.update(notification_params)
+    redirect_to notifications_path
+  end
 
-    def edit
-      @notification = Notification.find(params[:id])
-    end
-
-    def update
-      @notification = Notification.find(params[:id])
-      @notification.update(notification_params)
-      redirect_to notifications_path
-    end
-
-     def destroy
-        @notification = Notification.find(params[:id])
-        @notification.destroy
-        redirect_to notifications_path
-     end
+  def destroy
+    @notification = Notification.find(params[:id])
+    @notification.destroy
+    redirect_to notifications_path
+  end
 
 
 
