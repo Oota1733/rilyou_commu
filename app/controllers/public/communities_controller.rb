@@ -15,6 +15,13 @@ class Public::CommunitiesController < ApplicationController
 
     def show
       @community = Community.find(params[:id])
+      if params[:latest]
+        @community_posts = @community.posts.order(created_at: :desc)
+      elsif params[:old]
+        @community_posts = @community.posts.order(created_at: :asc)
+      else
+        @community_posts = @community.posts
+      end
       @tags = Post.all.map{|post| post.tag}.sort_by(&:id).uniq
     end
 
