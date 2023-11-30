@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  
   before_action :authenticate_admin!
 
   def show
@@ -17,8 +18,6 @@ class Admin::PostsController < ApplicationController
     @post.destroy
     redirect_to Community.find(params[:community_id])
   end
-
-
 
   private
 
