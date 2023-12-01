@@ -45,7 +45,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show,:index,:edit,:update] do
       get :favorites
     end
-
   end
 
   #管理者用
@@ -56,7 +55,7 @@ Rails.application.routes.draw do
     resources :notifications, only: [:index, :new, :create, :show, :edit, :update]
     resources :tags, only: [:index, :create, :edit, :update, :destroy]
     resources :posts, only: [:index, :new, :create, :show, :edit, :update] do
-       resources :comments, only: [:destroy]
+      resources :comments, only: [:destroy]
     end
   end
 
