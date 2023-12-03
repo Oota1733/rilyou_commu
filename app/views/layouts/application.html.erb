@@ -14,9 +14,9 @@
     <%= render 'layouts/header' %>
 
     <ul>
-    <% flash.each do |message_type, message| %>
-     <li class="flash-message <%= message_type %>"><%= message %></li>
-    <% end %>
+      <% flash.each do |message_type, message| %>
+        <li class="flash-message <%= message_type %>"><%= message %></li>
+      <% end %>
     </ul>
 
     <%= yield %>
