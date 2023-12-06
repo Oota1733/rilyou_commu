@@ -25,10 +25,10 @@
           <% else %>
             <td id="favorite_btn_<%= post.id %>"><%= render '/public/favorites/btn', post: post %></td>
           <% end %>
-          <td><%= link_to post.title, community_post_path(@community, post) %></td>
+            <td><%= link_to post.title, community_post_path(@community, post) %></td>
 
-          <td><%= post.body %></td>
-          <td><%= post.tag.name %></td>
+            <td><%= post.body %></td>
+            <td><%= post.tag.name %></td>
           <% if post.user == current_user %>
             <td><%= link_to '編集', edit_community_post_path(@community, post), class: "post_#{post.id} btn btn-success" %></td>
             <td><%= link_to "削除", community_post_path(@community, post), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-danger" %></td>
