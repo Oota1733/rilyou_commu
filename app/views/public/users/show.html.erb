@@ -11,6 +11,10 @@
         </div>
           <table class="table table-bordered">
             <tr>
+              <td>学籍番号</td>
+              <td><%= @user.student_id.nil? ? "" : @user.student_id %></td>
+            </tr>
+            <tr>
               <td>名前（性）</td>
               <td><%= @user.last_name %></td>
             </tr>

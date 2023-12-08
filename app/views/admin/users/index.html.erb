@@ -14,11 +14,12 @@
           <th>氏名</th>
           <th>メールアドレス</th>
           <th>ステータス</th>
+          <th>審査ステータス</th>
         </tr>
 
         <% @users.each do |user| %>
           <tr>
-            <td><%= user.id %></td>
+            <td><%= user.student_id.nil? ? "" : user.student_id %></td>
             <td><%= link_to user.full_name, admin_user_path(user) %></td>
             <td><%= user.email %></td>
             <td>
@@ -26,6 +27,13 @@
                 <span class="text-success">有効</span>
               <% else %>
                 <span class="text-secondary">退会</span>
+              <% end %>
+            </td>
+            <td>
+              <% if user.inactive %>
+                <span class="text-success">審査通過</span>
+              <% else %>
+                <span class="text-secondary">審査待ち</span>
               <% end %>
             </td>
           </tr>

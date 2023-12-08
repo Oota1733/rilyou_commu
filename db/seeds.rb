@@ -12,6 +12,7 @@
 
   #ユーザーアカウント配列
   User.find_or_create_by!(email: "maria@example.com") do |u|
+    u.student_id = "S-000000"
     u.password = "m1234567"
     u.last_name = "三木"
     u.first_name = "まりあ"
@@ -20,9 +21,11 @@
     u.phone_number = 12345678
     u.postal_code = 1234567
     u.address = "神奈川１"
+    u.inactive = true
   end
 
   User.find_or_create_by!(email: "taro@example.com") do |u|
+    u.student_id = "S-000001"
     u.password = "i1234567"
     u.last_name = "山田"
     u.first_name = "太郎"
@@ -31,9 +34,11 @@
     u.phone_number = 87654321
     u.postal_code = 1234567
     u.address = "千葉１"
+    u.inactive = true
   end
 
   User.find_or_create_by!(email: "kimura@example.com") do |u|
+    u.student_id = "S-000002"
     u.password = "y1234567"
     u.last_name = "木村"
     u.first_name = "りえ"
@@ -42,9 +47,11 @@
     u.phone_number = 1234567
     u.postal_code = 1234567
     u.address = "東京１"
+    u.inactive = true
   end
 
   User.find_or_create_by!(email: "taguti@example.com") do |u|
+    u.student_id = "S-000003"
     u.password = "t1234567"
     u.last_name = "田口"
     u.first_name = "涼太"
@@ -53,9 +60,11 @@
     u.phone_number = 1234567
     u.postal_code = 1234567
     u.address = "栃木１"
+    u.inactive = true
   end
 
   User.find_or_create_by!(email: "mori@example.com") do |u|
+    u.student_id = "S-000004"
     u.password = "s1234567"
     u.last_name = "森"
     u.first_name = "宮子"
@@ -64,6 +73,7 @@
     u.phone_number = 1234567
     u.postal_code = 1234567
     u.address = "群馬１"
+    u.inactive = true
   end
 
 
