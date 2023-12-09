@@ -9,6 +9,7 @@
           <td>学籍番号</td>
           <td cols="2"><%= @user.student_id.nil? ? "" : @user.student_id %></td>
         </tr>
+
         <tr>
           <td>氏名</td>
           <td><%= f.text_field :last_name, class:"mr-2" %></td>

@@ -10,10 +10,12 @@
           <%= link_to "編集する", users_information_edit_path, class:"btn btn-outline-danger ml-3 my-3" %>
         </div>
           <table class="table table-bordered">
+            
             <tr>
               <td>学籍番号</td>
               <td><%= @user.student_id.nil? ? "" : @user.student_id %></td>
             </tr>
+
             <tr>
               <td>名前（性）</td>
               <td><%= @user.last_name %></td>
